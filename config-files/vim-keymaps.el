@@ -1,5 +1,8 @@
 ;;;; global
 
+;; text-width
+(set-fill-column 80)
+
 (define-key evil-normal-state-map ";" 'evil-ex)
 (define-key evil-normal-state-map "v" 'evil-visual-block)
 (define-key evil-normal-state-map (kbd "C-v") 'evil-visual-state)

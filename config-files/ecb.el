@@ -3,10 +3,6 @@
 (require 'ecb)
 (require 'ecb-autoloads)
 
-(require 'autopair)
-(autopair-global-mode t)
-(setq autopair-autowrap t)
-
 (require 'speedbar)
 
 ;;; activate and deactivate ecb
