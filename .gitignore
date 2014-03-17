@@ -8,3 +8,4 @@ places
 ac-comphist.dat
 init.el.*
 tramp
+.python*
