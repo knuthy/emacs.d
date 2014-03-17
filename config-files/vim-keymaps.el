@@ -14,20 +14,20 @@
 (define-key evil-normal-state-map " m" 'evil-jump-item)
 (define-key evil-normal-state-map ",," 'evil-buffer)
 (define-key evil-normal-state-map "-" 'delete-other-windows)
-(define-key evil-normal-state-map "b" 'ido-switch-buffer)
-(define-key evil-normal-state-map "B" 'magit-checkout)
-(define-key evil-normal-state-map "E" 'ido-find-file)
-;; (define-key evil-normal-state-map "\\" 'evil-repeat-find-char-reverse)
-(define-key evil-normal-state-map "H" 'evil-first-non-blan)
-(define-key evil-normal-state-map "Y" 'copy-to-end-of-line)
-(define-key evil-normal-state-map "L" 'evil-last-non-blank)
+
+(define-key evil-normal-state-map (kbd "M-b") 'ido-switch-buffer)
+(define-key evil-normal-state-map (kbd "M-e") 'ido-find-file)
+
+(define-key evil-normal-state-map ",B" 'magit-checkout)
 (define-key evil-normal-state-map (kbd "<tab>") 'indent-for-tab-command)
 (define-key evil-normal-state-map (kbd "<C-return>") 'new-line-in-normal-mode)
 (define-key evil-normal-state-map (kbd "M-t") 'multi-term)
 (define-key evil-normal-state-map (kbd "M-F") 'dired)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
+
 (define-key evil-normal-state-map (kbd "M-j") 'evil-window-next)
 (define-key evil-normal-state-map (kbd "M-k") 'evil-window-prev)
+
 (define-key evil-normal-state-map (kbd "M-.") 'my-find-tag)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
@@ -48,8 +48,8 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 ;; (global-set-key (kbd "M-]") 'textmate-shift-right)
 ;; (global-set-key (kbd "M-[") 'textmate-shift-left)
-(global-set-key (kbd "M-j") 'other-window)
-(global-set-key (kbd "M-k") 'yas-expand-from-trigger-key)
+;; (global-set-key (kbd "M-j") 'other-window)
+;; (global-set-key (kbd "M-k") 'yas-expand-from-trigger-key)
 (global-set-key (kbd "M-.") 'my-find-tag)
 (global-set-key (kbd "M-b") 'ibuffer)
 (global-set-key (kbd "M-v") 'evil-paste-after)
@@ -57,17 +57,6 @@
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-w") 'quit-window)
 (global-set-key (kbd "M-W") 'projectile-kill-buffers)
-
-;;; iedit
-
-;; (global-set-key (kbd "M-L") 'iedit-mode)
-;; (global-set-key (kbd "M-l") 'iedit-dwim)
-
-;;; cursors
-
-(global-set-key (kbd "M-L") 'skip-current-mark-and-mark-next)
-(global-set-key (kbd "M-l") 'mc/mark-next-like-this)
-;;; drop some keymaps
 
 
 ;;; i miss intellij
