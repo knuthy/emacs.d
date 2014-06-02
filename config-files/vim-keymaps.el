@@ -12,8 +12,11 @@
 (define-key evil-normal-state-map " l" 'ace-jump-line-mode)
 ;(define-key evil-normal-state-map " s" 'textmate-goto-symbol)
 (define-key evil-normal-state-map " m" 'evil-jump-item)
-(define-key evil-normal-state-map ",," 'evil-buffer)
 (define-key evil-normal-state-map "-" 'delete-other-windows)
+(define-key evil-normal-state-map (kbd "C-,") 'evil-force-normal-state)
+(define-key evil-visual-state-map (kbd "C-,") 'evil-change-to-previous-state)
+(define-key evil-insert-state-map (kbd "C-,") 'evil-normal-state)
+(define-key evil-replace-state-map (kbd  "C-,") 'evil-normal-state)
 
 (define-key evil-normal-state-map (kbd "M-b") 'ido-switch-buffer)
 (define-key evil-normal-state-map (kbd "M-e") 'ido-find-file)
@@ -187,11 +190,10 @@
         (evil-normal-state-p)
         (evil-replace-state-p)
         (evil-visual-state-p)) [escape])
-   (t (kbd "C-g"))))
+   (t (kbd "C-q"))))
 
 (define-key key-translation-map (kbd "C-q") 'my-esc)
 (define-key evil-operator-state-map (kbd "<C-q>") 'keyboard-quit)
 (set-quit-char "C-q")
 ;;; Some keybindings
-
 (provide 'vim-keymaps)

@@ -4,10 +4,12 @@
 (require-package 'jedi)
 (require-package 'deferred)
 (require-package 's)
+(require 'python-mode)
 (require 'deferred)
 (require 's)
 (require 'cl)
 (require 'jedi)
 
 (add-hook 'python-mode-hook 'auto-complete-mode)
-(add-hook 'python-mode-hook 'jedi:ac-setup)
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)

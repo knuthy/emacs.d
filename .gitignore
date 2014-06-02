@@ -1,4 +1,4 @@
-#*#
+#*
 *~
 elpa
 el-get
@@ -9,3 +9,5 @@ ac-comphist.dat
 init.el.*
 tramp
 .python*
+session.*
+config-files/#*

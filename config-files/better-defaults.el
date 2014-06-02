@@ -55,6 +55,8 @@ re-downloaded in order to locate PACKAGE."
         (package-refresh-contents)
         (require-package package min-version t)))))
 
+
+
 (package-initialize)
 
 ;;;;; El-get
@@ -69,5 +71,15 @@ re-downloaded in order to locate PACKAGE."
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
+
+
+(defun indent-file (file)
+  "prompt for a file and indent it according to its major mode"
+  (interactive "fWhich file do you want to indent: ")
+  (find-file file)
+  ;; uncomment the next line to force the buffer into a c-mode
+  ;; (c-mode)
+  (indent-region (point-min) (point-max)))
+
 
 (provide 'better-defaults)

@@ -157,6 +157,12 @@ otherwise, close current tab (elscreen)."
 (evil-ex-define-cmd "q" 'vimlike-quit)
 (evil-ex-define-cmd "wq" 'vimlike-write-quit)
 
+(define-key evil-normal-state-map (kbd "C-<next>") 'elscreen-next)
+(define-key evil-normal-state-map (kbd "C-<prior>") 'elscreen-previous)
+
+(define-key evil-insert-state-map (kbd "C-<next>") 'elscreen-next)
+(define-key evil-insert-state-map (kbd "C-<prior>") 'elscreen-previous)
+
 (define-key evil-normal-state-map (kbd "<f12>") 'elscreen-next)
 (define-key evil-normal-state-map (kbd "<f11>") 'elscreen-previous)
 (define-key evil-normal-state-map (kbd "<f10>") 'elscreen-create)

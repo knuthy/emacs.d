@@ -2,6 +2,7 @@
     (el-get-install 'web-mode))
 (unless (require 'js2-mode nil 'noerror)
     (el-get-install 'web-mode))
+
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
@@ -10,8 +11,12 @@
 
 (defun web-mode-hook ()
   "Hooks for Web mode."
-  (setq web-mode-indent-offset 2)
-  (setq web-mode-comment-style 2)
+  (setq web-mode-indent-offset 4)
+  (setq web-mode-comment-style 4)
+  (setq web-mode-css-indent-offset 4)
+  (setq web-mode-code-indent-offset 4)
+
+  (setq web-mode-enable-css-colorization t)
 
   (define-key evil-normal-state-map (kbd "C-;") 'web-mode-comment-or-uncomment)
 
