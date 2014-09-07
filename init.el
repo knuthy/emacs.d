@@ -88,6 +88,9 @@
 ;;;;; SCALA
 (load "~/.emacs.d/config-files/scala")
 
+;;;;; Archlinux User Repository
+(require-package 'aurel)
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

@@ -46,9 +46,9 @@
   ;; (setq ecb-layout-name "cppide")
   ;; (ecb-use-speedbar-instead-native-tree-buffer)
 
-  (setq c-default-style "stroustrup" c-basic-offset 2)
+  (setq c-default-style "stroustrup" c-basic-offset 4)
   (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
-  (setq evil-shift-width 2)
+  (setq evil-shift-width 4)
   (setq evil-auto-indent t)
 
   )
