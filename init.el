@@ -62,9 +62,9 @@
 ;;;; AUTOCOMPLETION ;;;; END
 
 ;;;; ORG ;;;;; BEGIN
-(require-package 'org)
-(require-package 'org-plus-contrib)
-(require 'org)
+;; (require-package 'org)
+;; (require-package 'org-plus-contrib)
+;; (require 'org)
 ;;;; ORG ;;;;; END
 
 ;;;; ELSCREEN ;; BEGIN
@@ -79,7 +79,7 @@
 ;;;;; ECB;;; end
 
 ;;;;; AUCTEX ;;; BEGIN
-(load "~/.emacs.d/config-files/auctex")
+;; (load "~/.emacs.d/config-files/auctex")
 ;;;;; AUCTEX ;;; END
 
 ;;;;; webstuffs
@@ -91,6 +91,29 @@
 ;;;;; Archlinux User Repository
 (require-package 'aurel)
 
+;;;; JAVA - ECLIM
+(add-hook 'java-mode-hook
+          (lambda ()
+                (require 'eclim)
+                (global-eclim-mode)
+                (require 'eclimd)
+                (custom-set-variables
+                  '(eclim-eclipse-dirs '("~/Deploy/eclipse"))
+                  '(eclim-executable "~/Deploy/eclipse/eclim"))
+                (setq help-at-pt-display-when-idle t)
+                (setq help-at-pt-timer-delay 0.1)
+                (help-at-pt-set-timer)
+                ;; regular auto-complete initialization
+                (require 'auto-complete-config)
+                (ac-config-default)
+
+                ;; add the emacs-eclim source
+                (require 'ac-emacs-eclim-source)
+                (ac-emacs-eclim-config)
+
+                (global-set-key (kbd "C-9") 'eclim-project-build)
+                (global-set-key (kbd "C-6") 'eclim-java-find-declaration)
+                ))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

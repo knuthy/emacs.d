@@ -39,6 +39,8 @@
 (evil-define-key 'visual global-map (kbd ",re") 'dr/extract-variable)
 (evil-define-key 'normal global-map (kbd ",ri") 'dr/inline-variable)
 
+(global-set-key (kbd "C-x f") 'fiplr-find-file)
+
 (global-set-key [f1] 'magit-status)
 (global-set-key [f2] 'writeroom-mode)
 (global-set-key [f5] 'my-clear-all-caches)
