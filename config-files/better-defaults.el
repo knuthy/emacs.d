@@ -37,6 +37,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("org" . "http://orgmode.org/elpa/") t)
+
+(add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 
 ;;; from purcell/emacs.d
@@ -68,6 +70,11 @@ re-downloaded in order to locate PACKAGE."
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
+
+(defun require-el-get (package)
+  "Install given PACKAGE using el-get"
+    (unless (require package nil 'noerror)
+        (el-get-install package)))
 
 
 (defun indent-file (file)

@@ -75,7 +75,7 @@
 ;;;; ELSCREEN ;; END
 
 ;;;;; ECB;;; begin
-(load "~/.emacs.d/config-files/ecb")
+;(load "~/.emacs.d/config-files/ecb")
 ;;;;; ECB;;; end
 
 ;;;;; AUCTEX ;;; BEGIN
@@ -86,15 +86,15 @@
 (load "~/.emacs.d/config-files/web")
 
 ;;;;; SCALA
-(load "~/.emacs.d/config-files/scala")
+;(load "~/.emacs.d/config-files/scala")
 
 (unless (package-installed-p 'cider)
   (package-install 'cider))
 
-;;;;; Archlinux User Repository
+;;;; Archlinux User Repository
 (require-package 'aurel)
 
-;;;; JAVA - ECLIM
+;;; JAVA - ECLIM
 (add-hook 'java-mode-hook
           (lambda ()
                 (require 'eclim)
@@ -106,17 +106,20 @@
                 (setq help-at-pt-display-when-idle t)
                 (setq help-at-pt-timer-delay 0.1)
                 (help-at-pt-set-timer)
-                ;; regular auto-complete initialization
+                regular auto-complete initialization
                 (require 'auto-complete-config)
                 (ac-config-default)
 
-                ;; add the emacs-eclim source
+                add the emacs-eclim source
                 (require 'ac-emacs-eclim-source)
                 (ac-emacs-eclim-config)
 
                 (global-set-key (kbd "C-9") 'eclim-project-build)
                 (global-set-key (kbd "C-6") 'eclim-java-find-declaration)
                 ))
+
+;;; other stuffs
+(load "~/.emacs.d/config-files/others")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
