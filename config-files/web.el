@@ -1,7 +1,7 @@
 (unless (require 'web-mode nil 'noerror)
     (el-get-install 'web-mode))
 (unless (require 'js2-mode nil 'noerror)
-    (el-get-install 'web-mode))
+    (el-get-install 'js2-mode))
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
@@ -17,19 +17,6 @@
   (setq web-mode-code-indent-offset 4)
 
   (setq web-mode-enable-css-colorization t)
-
-  (define-key evil-normal-state-map (kbd "C-;") 'web-mode-comment-or-uncomment)
-
-  (setq web-mode-extra-snippets
-        '(("erb" . (("name" . ("beg" . "end"))))
-          ("php" . (("name" . ("beg" . "end"))
-                    ("name" . ("beg" . "end"))))
-          ))
-  (setq web-mode-extra-auto-pairs
-        '(("erb" . (("open" "close")))
-          ("php" . (("open" "close")
-                    ("open" "close")))
-          ))
 )
 
 (add-hook 'web-mode-hook 'web-mode-hook)
@@ -37,4 +24,12 @@
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-hook 'js-mode-hook 'js2-minor-mode)
+(custom-set-variables  
+ '(js2-basic-offset 2)  
+ '(js2-bounce-indent-p t)  
+)
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+
+(require-package 'smart-tabs-mode)
+(smart-tabs-insinuate 'c 'javascript)
+(smart-tabs-advice js2-indent-line js2-basic-offset)

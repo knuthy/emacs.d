@@ -1,5 +1,5 @@
-(require 'cl)
-(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+;; (require 'cl)
+;; (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
 ;; (Require-package 'ecb)
 ;; (require-package 'autopair)
@@ -40,23 +40,23 @@
 ;; (setq ecb-layout-name "left13")
 ;; (setq ecb-show-sources-in-directories-buffer 'always)
 
-(defun cmodehook()
-  ;; some customization to be used when C/C++ file is opened
+;; (defun cmodehook()
+;;   ;; some customization to be used when C/C++ file is opened
 
-  ;; (setq ecb-layout-name "cppide")
-  ;; (ecb-use-speedbar-instead-native-tree-buffer)
+;;   ;; (setq ecb-layout-name "cppide")
+;;   ;; (ecb-use-speedbar-instead-native-tree-buffer)
 
-  (setq c-default-style "stroustrup" c-basic-offset 4)
-  (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
-  (setq evil-shift-width 4)
-  (setq evil-auto-indent t)
+;;   (setq c-default-style "stroustrup" c-basic-offset 4)
+;;   (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
+;;   (setq evil-shift-width 4)
+;;   (setq evil-auto-indent t)
 
-  )
+;;   )
 
-(add-hook 'c-mode-common-hook 'cmodehook)
-(defun my-indent-setup ()
-  (c-set-offset 'arglist-intro '+))
-(add-hook 'c-mode-common-hook 'my-indent-setup)
+;; (add-hook 'c-mode-common-hook 'cmodehook)
+;; (defun my-indent-setup ()
+;;   (c-set-offset 'arglist-intro '+))
+;; (add-hook 'c-mode-common-hook 'my-indent-setup)
 
 
 
