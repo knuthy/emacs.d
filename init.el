@@ -88,8 +88,11 @@
 ;;;;; SCALA
 ;(load "~/.emacs.d/config-files/scala")
 
+;;;; cider
 (unless (package-installed-p 'cider)
   (package-install 'cider))
+(require-package 'paredit)
+(paredit-mode 1)
 
 ;;;; Archlinux User Repository
 (require-package 'aurel)
@@ -128,6 +131,7 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector ["black" "red" "green" "yellow" "cyan" "magenta" "cyan" "white"])
  '(ecb-layout-window-sizes (quote (("cppide" (ecb-methods-buffer-name 0.16847826086956522 . 0.22641509433962265) (ecb-speedbar-buffer-name 0.16847826086956522 . 0.37735849056603776) (ecb-history-buffer-name 0.16847826086956522 . 0.37735849056603776)) ("left13" (ecb-directories-buffer-name 0.20652173913043478 . 0.9811320754716981)))))
+ '(cider-lein-command "/home/zeapo/.local/bin/lein")
  '(ecb-options-version "2.40")
  '(inhibit-startup-screen t)
  '(spice-output-local "Gnucap")
