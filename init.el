@@ -88,6 +88,9 @@
 ;;;;; SCALA
 (load "~/.emacs.d/config-files/scala")
 
+(unless (package-installed-p 'cider)
+  (package-install 'cider))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
